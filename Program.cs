@@ -38,6 +38,18 @@ namespace randalls_car_lot
 
       vehicles.Add(davisSalesInfo);
 
+      foreach (Dictionary<string, Dictionary<string, string>> saleDict in vehicles)
+      {
+        foreach (KeyValuePair<string, Dictionary<string, string>> salePair in saleDict)
+        {
+          Console.WriteLine("-----------");
+          Console.WriteLine(salePair.Key);
+          foreach (KeyValuePair<string, string> section in salePair.Value)
+          {
+            Console.WriteLine($"{section.Key}: {section.Value}");
+          }
+        }
+      }
 
     }
   }
